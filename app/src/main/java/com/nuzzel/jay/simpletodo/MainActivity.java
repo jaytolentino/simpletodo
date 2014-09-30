@@ -20,7 +20,7 @@ import java.util.List;
 
 public class MainActivity extends Activity {
     ArrayList<String> items;
-    ArrayAdapter<String> itemsAdapter;
+    CustomTaskAdapter itemsAdapter;
     ListView lvItems;
 
     @Override
@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         lvItems = (ListView) findViewById(R.id.lvItems);
         readItems();
-        itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        itemsAdapter = new CustomTaskAdapter(this, R.layout.rowlayout, items);
         lvItems.setAdapter(itemsAdapter);
         setupListViewListener();
     }
