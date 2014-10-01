@@ -10,5 +10,7 @@
     <string name="old_task_text">task description</string>
     <string name="appName">To-Do List Manager</string>
     <string name="defaut_sans">\"Helvetica Neue\", Helvetica, Tahoma, sans-serif</string>
+    <string name="welcome">Welcome!</string>
+    <string name="home_title">Tasks To Do...</string>
 
 </resources>

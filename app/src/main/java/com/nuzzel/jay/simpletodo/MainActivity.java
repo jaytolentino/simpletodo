@@ -31,6 +31,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("To-Do List Manager");
+
         lvItems = (ListView) findViewById(R.id.lvItems);
         readItems();
 
