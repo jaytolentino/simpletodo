@@ -16,17 +16,16 @@ Task data, including task completion status, persists after closing app.
 
 * User can create and add a new task to the list.
 
-![Add Task](https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_addTask.gif =100x)
+<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_addTask.gif" style="width: 200px"/>
 
 * User can edit a task's text description.
 
-![Add Task](https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_editDescr.gif)
+<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_editDescr.gif" style="width: 200px"/>
 
 * User can delete a task.
 
-![Add Task](https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_deleteTask.gif)
+<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_deleteTask.gif" style="width: 200px"/>
 
 * User can complete a task by checking it off. (Note: Data persists after shutting down app.)
 
-![Add Task](https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_tasksPersist.gif)
-
+<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_taskPersists.gif" style="width: 200px"/>
