@@ -19,7 +19,7 @@ import java.util.List;
 
 
 public class MainActivity extends Activity {
-    ArrayList<String> items;
+    ArrayList<Task> items;
     CustomTaskAdapter itemsAdapter;
     ListView lvItems;
 
@@ -82,6 +82,7 @@ public class MainActivity extends Activity {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
         try {
+            // TODO parse lines into tasks & add to items
             items = new ArrayList<String>(FileUtils.readLines(todoFile));
         } catch (IOException e) {
             items = new ArrayList<String>();
@@ -92,7 +93,11 @@ public class MainActivity extends Activity {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
         try {
-            FileUtils.writeLines(todoFile, itemsAdapter.getTaskList());
+            ArrayList<String> writeableTasks = new ArrayList<String>();
+            for(Task t : itemsAdapter.getTaskList()) {
+                writeableTasks.add(t.getWriteable());
+            }
+            FileUtils.writeLines(todoFile, writeableTasks);
         } catch (IOException e) {
             e.printStackTrace();
         }
