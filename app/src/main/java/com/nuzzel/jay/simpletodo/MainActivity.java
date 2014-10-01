@@ -107,10 +107,6 @@ public class MainActivity extends Activity {
         );
     }
 
-    private void toast() {
-        Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
-    }
-
     private void readItems() {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
