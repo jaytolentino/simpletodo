@@ -15,4 +15,4 @@ Task data, including task completion status, persists after closing app.
 ### User Story Walkthrough
 
 1. User can create and add a new task to the list.
-(GIFs/simpletodo_addTask.gif)
+![Add Task](https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_addTask.gif)
