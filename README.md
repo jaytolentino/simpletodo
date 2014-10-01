@@ -16,7 +16,7 @@ Task data, including task completion status, persists after closing app.
 
 * User can create and add a new task to the list.
 
-<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_addTask.gif" style="width: 200px"/>
+<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_addTask.gif" width="200"/>
 
 * User can edit a task's text description.
 
