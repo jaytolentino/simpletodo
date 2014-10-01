@@ -14,8 +14,13 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/edit_task_prompt"
         android:id="@+id/editPrompt"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="@dimen/default_padding"
+        android:gravity="center"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -23,16 +28,50 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/revisedTask"
+        android:hint="@string/old_task_text"
         android:layout_below="@+id/editPrompt"
-        android:layout_centerHorizontal="true"
-        android:hint="@string/old_task_text" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/save"
+        android:layout_toStartOf="@+id/save" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/save"
         android:id="@+id/save"
-        android:layout_below="@+id/revisedTask"
-        android:layout_centerHorizontal="true"
-        android:onClick="onSave" />
+        android:onClick="onSave"
+        android:layout_alignTop="@+id/revisedTask"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignBottom="@+id/revisedTask" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/ic_launcher"
+        android:paddingBottom="@dimen/default_padding"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:text="@string/appName"
+        android:gravity="center_vertical"
+        android:id="@+id/textView"
+        android:layout_toEndOf="@+id/imageView"
+        android:fontFamily="@string/defaut_sans"
+        android:paddingLeft="@dimen/default_padding"
+        android:paddingBottom="@dimen/default_padding"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
