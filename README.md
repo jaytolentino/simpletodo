@@ -35,3 +35,9 @@ User can delete a task.
 User can complete a task by checking it off. (Note: Data persists after shutting down app.)
 
 <img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_tasksPersist.gif" width="200"/>
+
+- - -
+
+__All user stories__
+
+<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_all.gif" width="200"/>
