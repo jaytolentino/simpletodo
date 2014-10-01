@@ -23,6 +23,8 @@ public class EditItemActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.edit_item, menu);
+        EditText revisedTask = (EditText) findViewById(R.id.revisedTask);
+        revisedTask.setText(getIntent().getStringExtra("oldText"));
         return true;
     }
 
@@ -41,10 +43,9 @@ public class EditItemActivity extends Activity {
     public void onSave(View v) {
         EditText revisedTask = (EditText) findViewById(R.id.revisedTask);
         String taskText = revisedTask.getText().toString();
-        Toast.makeText(this, taskText, Toast.LENGTH_SHORT).show();
+
         Intent i = new Intent(EditItemActivity.this, MainActivity.class);
         i.putExtra("revisedTask", taskText);
-        Toast.makeText(this, getIntent().getStringExtra("revisedTask"), Toast.LENGTH_SHORT).show();
         i.putExtra("position", getIntent().getIntExtra("position", 0));
         startActivity(i);
     }

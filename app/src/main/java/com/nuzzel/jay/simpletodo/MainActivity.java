@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import org.apache.commons.io.FileUtils;
 
@@ -36,6 +35,7 @@ public class MainActivity extends Activity {
         if (getIntent().hasExtra("position") && getIntent().hasExtra("revisedTask")) {
             int position = getIntent().getIntExtra("position", 0);
             items.set(position, getIntent().getStringExtra("revisedTask"));
+            writeItems();
         }
 
         itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
@@ -97,6 +97,7 @@ public class MainActivity extends Activity {
                         // TODO Go to EditItemActivity
                         Intent i = new Intent(MainActivity.this, EditItemActivity.class);
                         i.putExtra("position", pos);
+                        i.putExtra("oldText", items.get(pos));
                         startActivity(i);
                     }
                 }
