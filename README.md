@@ -14,18 +14,24 @@ Task data, including task completion status, persists after closing app.
 
 ### User Story Walkthrough
 
-* User can create and add a new task to the list.
+User can create and add a new task to the list.
 
 <img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_addTask.gif" width="200"/>
 
-* User can edit a task's text description.
+- - -
+
+User can edit a task's text description.
 
 <img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_editDescr.gif" width="200"/>
 
-* User can delete a task.
+- - -
+
+User can delete a task.
 
 <img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_deleteTask.gif" width="200"/>
 
-* User can complete a task by checking it off. (Note: Data persists after shutting down app.)
+- - -
+
+User can complete a task by checking it off. (Note: Data persists after shutting down app.)
 
 <img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_taskPersists.gif" width="200"/>
