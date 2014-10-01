@@ -41,3 +41,5 @@ User can complete a task by checking it off. (Note: Data persists after shutting
 __All user stories__
 
 <img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_all.gif" width="250"/>
+
+GIFs created with [LiceCap](http://www.cockos.com/licecap/)
