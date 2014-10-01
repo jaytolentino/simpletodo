@@ -20,12 +20,12 @@ Task data, including task completion status, persists after closing app.
 
 * User can edit a task's text description.
 
-<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_editDescr.gif" style="width: 200px"/>
+<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_editDescr.gif" width="200"/>
 
 * User can delete a task.
 
-<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_deleteTask.gif" style="width: 200px"/>
+<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_deleteTask.gif" width="200"/>
 
 * User can complete a task by checking it off. (Note: Data persists after shutting down app.)
 
-<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_taskPersists.gif" style="width: 200px"/>
+<img src="https://raw.githubusercontent.com/jaytolentino/simpletodo/master/GIFs/simpletodo_taskPersists.gif" width="200"/>
