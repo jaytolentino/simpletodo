@@ -5,17 +5,26 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/tvTask"
-        android:layout_gravity="right" />
+        android:id="@+id/row">
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/cbCheckoff"
-        android:checked="false" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkoff"
+            android:layout_gravity="left|center_vertical"
+            android:checked="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
 
+        <TextView
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:text="Task Description"
+            android:id="@+id/description"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
 </LinearLayout>
