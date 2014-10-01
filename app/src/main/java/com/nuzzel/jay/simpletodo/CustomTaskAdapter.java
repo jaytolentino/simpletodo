@@ -1,10 +1,12 @@
 package com.nuzzel.jay.simpletodo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,8 +30,21 @@ public class CustomTaskAdapter extends ArrayAdapter{
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View rowView = inflater.inflate(R.layout.rowlayout, parent, false);
+        final Task currentTask = taskList.get(position);
+
         TextView description = (TextView) rowView.findViewById(R.id.description);
-        description.setText(taskList.get(position).getDescription());
+        description.setText(currentTask.getDescription());
+
+        CheckBox checkoff = (CheckBox) rowView.findViewById(R.id.checkoff);
+        checkoff.setChecked(currentTask.isComplete());
+        checkoff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentTask.checkTask();
+                MainActivity activity = (MainActivity) context;
+                activity.writeItems();
+            }
+        });
 
         return rowView;
     }

@@ -24,8 +24,9 @@ public class Task {
         return description;
     }
 
-    // TODO convert task to writeable format for text file
-    public String getWriteable() {
-        return "";
+    public String getWritable() {
+        String taskInfo = (completed == true ? "true" : "false");
+        taskInfo += " " + description;
+        return taskInfo;
     }
 }

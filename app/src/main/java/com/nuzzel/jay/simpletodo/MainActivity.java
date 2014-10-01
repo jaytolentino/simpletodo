@@ -15,6 +15,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -57,8 +58,7 @@ public class MainActivity extends Activity {
     public void onAddItem(View v) {
         EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
         String itemText = etNewItem.getText().toString();
-//        items.add(itemText);
-        itemsAdapter.add(itemText);
+        itemsAdapter.add(new Task(itemText));
         etNewItem.setText("");
         writeItems();
     }
@@ -69,7 +69,6 @@ public class MainActivity extends Activity {
                 @Override
                 public boolean onItemLongClick(AdapterView<?> adapterView,
                                                View view, int pos, long id) {
-//                    items.remove(pos);
                     itemsAdapter.remove(items.get(pos));
                     writeItems();
                     return true;
@@ -81,25 +80,32 @@ public class MainActivity extends Activity {
     private void readItems() {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
+        items = new ArrayList<Task>();
         try {
             // TODO parse lines into tasks & add to items
-            items = new ArrayList<String>(FileUtils.readLines(todoFile));
-        } catch (IOException e) {
-            items = new ArrayList<String>();
-        }
+            for(String line: FileUtils.readLines(todoFile)) {
+                List<String> data = Arrays.asList(line.split(" ", 2));
+                Task taskToAdd = new Task(data.get(1));
+                if(data.get(0).equals("true")) taskToAdd.checkTask();
+                items.add(taskToAdd);
+            }
+
+        } catch (IOException e) {}
     }
 
-    private void writeItems() {
+    public void writeItems() {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
         try {
-            ArrayList<String> writeableTasks = new ArrayList<String>();
+            ArrayList<String> writableTasks = new ArrayList<String>();
             for(Task t : itemsAdapter.getTaskList()) {
-                writeableTasks.add(t.getWriteable());
+                writableTasks.add(t.getWritable());
             }
-            FileUtils.writeLines(todoFile, writeableTasks);
+            FileUtils.writeLines(todoFile, writableTasks);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 }
