@@ -8,5 +8,7 @@
     <string name="edit_task_prompt">Edit</string>
     <string name="save">Save</string>
     <string name="old_task_text">task description</string>
+    <string name="appName">To-Do List Manager</string>
+    <string name="defaut_sans">\"Helvetica Neue\", Helvetica, Tahoma, sans-serif</string>
 
 </resources>
