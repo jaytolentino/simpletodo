@@ -1,6 +1,7 @@
 package com.nuzzel.jay.simpletodo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.apache.commons.io.FileUtils;
 
@@ -29,9 +31,18 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         lvItems = (ListView) findViewById(R.id.lvItems);
         readItems();
+
+        // If intent has extras, replace at position
+        if (getIntent().hasExtra("position") && getIntent().hasExtra("revisedTask")) {
+            int position = getIntent().getIntExtra("position", 0);
+            items.set(position, getIntent().getStringExtra("revisedTask"));
+        }
+
         itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
-        setupListViewListener();
+
+        setupLongClickListener();
+        setupShortClickListener();
     }
 
 
@@ -62,18 +73,33 @@ public class MainActivity extends Activity {
         writeItems();
     }
 
-    private void setupListViewListener() {
+    private void setupLongClickListener() {
         lvItems.setOnItemLongClickListener(
-            new AdapterView.OnItemLongClickListener() {
-                @Override
-                public boolean onItemLongClick(AdapterView<?> adapterView,
-                                               View view, int pos, long id) {
-                    items.remove(pos);
-                    itemsAdapter.notifyDataSetChanged();
-                    writeItems();
-                    return true;
+                new AdapterView.OnItemLongClickListener() {
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> adapterView,
+                                                   View view, int pos, long id) {
+                        items.remove(pos);
+                        itemsAdapter.notifyDataSetChanged();
+                        writeItems();
+                        return true;
+                    }
                 }
-            }
+        );
+    }
+
+    private void setupShortClickListener() {
+        lvItems.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView,
+                                            View view, int pos, long id) {
+                        // TODO Go to EditItemActivity
+                        Intent i = new Intent(MainActivity.this, EditItemActivity.class);
+                        i.putExtra("position", pos);
+                        startActivity(i);
+                    }
+                }
         );
     }
 
