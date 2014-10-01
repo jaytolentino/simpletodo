@@ -1,9 +1,11 @@
 package com.nuzzel.jay.simpletodo;
 
+import java.io.Serializable;
+
 /**
  * Created by Jay on 9/30/14.
  */
-public class Task {
+public class Task implements Serializable {
     private String description;
     private boolean completed;
 
@@ -28,5 +30,9 @@ public class Task {
         String taskInfo = (completed == true ? "true" : "false");
         taskInfo += " " + description;
         return taskInfo;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
